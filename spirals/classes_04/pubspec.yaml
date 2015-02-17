@@ -1,0 +1,9 @@
+name: classes
+version: 0.0.4
+author: Dzenan Ridjanovic <dzenanr@gmail.com>
+description: User created class examples.
+homepage: http://ondart.me/
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dev_dependencies:
+  unittest: any
