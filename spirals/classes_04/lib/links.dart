@@ -46,7 +46,7 @@ class Links {
   }
 
   Link find(String name) {
-    for (Link link in _list) {
+    for (Link link in this) {
       if (link.name == name) return link;
     }
     return null;
@@ -59,7 +59,7 @@ class Links {
     print('');
     print(title);
     print('[');
-    for (Link link in _list) {
+    for (Link link in this) {
       print(link.display());
     }
     print(']');

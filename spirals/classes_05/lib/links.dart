@@ -9,20 +9,6 @@ class Link implements Comparable {
   Link(this.name, String link) {
     url = Uri.parse(link);
   }
-  
-  /**
-   * Compares two links based on their names.
-   * If the result is less than 0 then the first link is less than the second,
-   * if it is equal to 0 they are equal and
-   * if the result is greater than 0 then the first is greater than the second.
-   */
-  int compareTo(Link link) {
-    if (name != null && link.name != null) {
-      return name.compareTo(link.name);
-    } else {
-      throw new Exception('a link name must be present');
-    }
-  }
 
   Link.fromJson(Map<String, Object> linkMap) {
     name = linkMap['name'];
@@ -44,6 +30,20 @@ class Link implements Comparable {
   }
   
   display() => toString();
+  
+  /**
+   * Compares two links based on their names.
+   * If the result is less than 0 then the first link is less than the second,
+   * if it is equal to 0 they are equal and
+   * if the result is greater than 0 then the first is greater than the second.
+   */
+  int compareTo(Link link) {
+    if (name != null && link.name != null) {
+      return name.compareTo(link.name);
+    } else {
+      throw new Exception('a link name must be present');
+    }
+  }
 }
 
 class Links {
@@ -73,22 +73,19 @@ class Links {
   }
 
   Link find(String name) {
-    for (Link link in _list) {
+    for (Link link in this) {
       if (link.name == name) return link;
     }
     return null;
   }
 
   bool remove(Link link) => _list.remove(link);  
-  clear() => _list.clear();
-  
-  sort() {
-    _list.sort();
-  }
+  clear() => _list.clear(); 
+  sort() => _list.sort();
   
   List<Map<String, Object>> toJson() {
     var linkList = new List<Map<String, Object>>();
-    for (Link link in _list) {
+    for (Link link in this) {
       linkList.add(link.toJson());
     }
     return linkList;
