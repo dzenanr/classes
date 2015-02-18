@@ -59,7 +59,7 @@ class Links {
   Iterator<Link> get iterator => _list.iterator;
   int get length => _list.length;
   bool get isEmpty => _list.isEmpty;
-  void forEach(Function f(Link link)) => _list.forEach(f);
+  void forEach(Function f) => _list.forEach(f);
   
   bool add(Link newLink) {
     if (newLink == null) {
@@ -107,7 +107,7 @@ class Links {
     print('');
     print(title);
     print('[');
-    _list.forEach((link) => print(link.display()));
+    forEach((link) => print(link.display()));
     print(']');
     print('');
   }

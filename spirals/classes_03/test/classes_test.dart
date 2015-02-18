@@ -15,6 +15,7 @@ void defineTests() {
     test('Uri value', () {
       var link = new Link('dzenanr', 'dr 15');
       expect(link.url, equals(Uri.parse('dr 15')));
+      //expect(link.url.toString(), equals('dr 15'));
       expect(link.url.toString(), equals('dr%2015'));
     });
   });

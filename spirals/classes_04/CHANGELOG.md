@@ -3,4 +3,4 @@
 ## 0.0.4
 
 * Links class
-* Links tests
+* Links tests with setUp and tearDown
